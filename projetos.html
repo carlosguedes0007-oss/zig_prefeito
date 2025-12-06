@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Zig Prefeito — Projetos</title>
+  <link rel="stylesheet" href="projetos.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <div>
+        <h1 class="site-title">Zig Candidato</h1>
+        <p class="site-subtitle">Projetos da administração — Prefeitura municipal</p>
+      </div>
+
+      <nav class="main-nav" role="navigation" aria-label="Menu principal">
+        <ul class="nav-list">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="projetos.html" aria-current="page">Projetos</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="site-main" role="main">
+    <section class="projects-section container" aria-labelledby="projects-title">
+      <header class="projects-intro">
+        <h2 id="projects-title">Projetos em destaque</h2>
+        <p class="lead">Mais de 5 projetos com muita dedicação — navegue pelos cards para ver detalhes.</p>
+      </header>
+
+      <div class="projects-grid" role="list" aria-label="Lista de projetos">
+        <!-- Cada card é um link (role=listitem implícito) -->
+        <a class="project-card" href="PROJETOS/projeto1.html" role="listitem" aria-labelledby="p1-title">
+          <div class="project-media" aria-hidden="true"></div>
+          <div class="project-body">
+            <h3 id="p1-title">Projeto 1 - Minha pata minha vida</h3>
+            <p class="project-excerpt">Resumo curto do projeto 1 — objetivo e impacto esperado.</p>
+          </div>
+        </a>
+
+        <a class="project-card" href="PROJETOS/projeto2.html" role="listitem" aria-labelledby="p2-title">
+          <div class="project-media" aria-hidden="true"></div>
+          <div class="project-body">
+            <h3 id="p2-title">Projeto 2 - Pata de pantufa</h3>
+            <p class="project-excerpt">Resumo curto do projeto 2 — objetivo e impacto esperado.</p>
+          </div>
+        </a>
+
+        <a class="project-card" href="PROJETOS/projeto3.html" role="listitem" aria-labelledby="p3-title">
+          <div class="project-media" aria-hidden="true"></div>
+          <div class="project-body">
+            <h3 id="p3-title">Projeto 3 - Saudavel paladar</h3>
+            <p class="project-excerpt">Resumo curto do projeto 3 — objetivo e impacto esperado.</p>
+          </div>
+        </a>
+
+        <a class="project-card" href="PROJETOS/projeto4.html" role="listitem" aria-labelledby="p4-title">
+          <div class="project-media" aria-hidden="true"></div>
+          <div class="project-body">
+            <h3 id="p4-title">Projeto 4 - Patas Unidas</h3>
+            <p class="project-excerpt">Resumo curto do projeto 4 — objetivo e impacto esperado.</p>
+          </div>
+        </a>
+
+        <a class="project-card" href="PROJETOS/projeto5.html" role="listitem" aria-labelledby="p5-title">
+          <div class="project-media" aria-hidden="true"></div>
+          <div class="project-body">
+            <h3 id="p5-title">Projeto 5 - Ração para todos</h3>
+            <p class="project-excerpt">Resumo curto do projeto 5 — objetivo e impacto esperado.</p>
+          </div>
+        </a>
+
+        <a class="project-card" href="PROJETOS/projeto6.html" role="listitem" aria-labelledby="p6-title">
+          <div class="project-media" aria-hidden="true"></div>
+          <div class="project-body">
+            <h3 id="p6-title">Projeto 6 - Vet para todos</h3>
+            <p class="project-excerpt">Resumo curto do projeto 6 — objetivo e impacto esperado.</p>
+          </div>
+        </a>
+
+        <a class="project-card" href="PROJETOS/projeto7.html" role="listitem" aria-labelledby="p7-title">
+          <div class="project-media" aria-hidden="true"></div>
+          <div class="project-body">
+            <h3 id="p7-title">Projeto 7 - Pata familiar</h3>
+            <p class="project-excerpt">Resumo curto do projeto 7 — objetivo e impacto esperado.</p>
+          </div>
+        </a>
+
+        <a class="project-card" href="PROJETOS/projeto8.html" role="listitem" aria-labelledby="p8-title">
+          <div class="project-media" aria-hidden="true"></div>
+          <div class="project-body">
+            <h3 id="p8-title">Projeto 8 - Lei Cain Cain</h3>
+            <p class="project-excerpt">Resumo curto do projeto 8 — objetivo e impacto esperado.</p>
+          </div>
+        </a>
+
+        <a class="project-card" href="PROJETOS/projeto9.html" role="listitem" aria-labelledby="p9-title">
+          <div class="project-media" aria-hidden="true"></div>
+          <div class="project-body">
+            <h3 id="p9-title">Projeto 9 - Diga sim a castração dos donos</h3>
+            <p class="project-excerpt">Resumo curto do projeto 9 — objetivo e impacto esperado.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <small>© <span id="year"></span> Zig Candidato — Prefeitura Municipal</small>
+      <small>© <span id="year"></span> Site com foco no humor</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

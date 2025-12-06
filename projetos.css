@@ -1,0 +1,162 @@
+/* projetos.css
+   Versão revisada — grid de cards quadrados, tema preto & verde, foco em legibilidade e responsividade.
+   Use este arquivo sozinho ou inclua após um arquivo global (home.css). */
+
+/* --- Variáveis de tema --- */
+:root{
+  --bg: #070707;
+  --surface: #0f0f0f;
+  --muted: #9fb79f;
+  --text: #e8fff2;
+  --accent: #00c853;
+  --accent-600: #00b24a;
+  --glass: rgba(255,255,255,0.02);
+  --focus: rgba(0,200,83,0.24);
+  --card-radius: 12px;
+  --gap: 1rem;
+  --max-width: 1100px;
+  --container-pad: 1rem;
+  --transition: 200ms cubic-bezier(.2,.9,.2,1);
+}
+
+/* --- Reset mínimo / base --- */
+*{ box-sizing: border-box; }
+html,body{ height:100%; margin:0; background:var(--bg); color:var(--text); font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+a{ color:inherit; text-decoration:none; }
+.container{ max-width:var(--max-width); margin:0 auto; padding:0 var(--container-pad); }
+
+/* --- Skip link (acessibilidade) --- */
+.skip-link{
+  position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
+}
+.skip-link:focus,
+.skip-link:active{
+  left:1rem; top:1rem; width:auto; height:auto; padding:.45rem .6rem;
+  background:var(--accent); color:var(--bg); border-radius:8px; z-index:9999; text-decoration:none;
+}
+
+/* --- Cabeçalho / Navegação --- */
+.site-header{
+  backdrop-filter: blur(6px);
+  background: linear-gradient(180deg, rgba(0,0,0,0.18), transparent);
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  position:sticky; top:0; z-index:40;
+}
+.header-inner{ display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.9rem 0; }
+.site-title{ margin:0; font-size:1.25rem; letter-spacing:.4px; color:var(--text); }
+.site-subtitle{ margin:2px 0 0 0; font-size:.78rem; color:var(--muted); }
+.main-nav .nav-list{ list-style:none; margin:0; padding:0; display:flex; gap:.5rem; align-items:center; }
+.main-nav .nav-list a{ display:inline-block; padding:.35rem .6rem; border-radius:8px; color:var(--text); font-weight:600; font-size:.95rem; transition: background var(--transition), transform var(--transition); }
+.main-nav .nav-list a:hover{ background: rgba(0,200,83,0.06); transform:translateY(-2px); }
+.main-nav .nav-list a[aria-current="page"]{ box-shadow: inset 0 -2px 0 var(--accent); }
+
+/* --- Introdução da seção --- */
+.projects-section{ padding:2rem 0; }
+.projects-intro{ margin-bottom:1rem; }
+.projects-intro h2{ margin:0 0 .25rem 0; font-size:1.5rem; color:var(--text); }
+.projects-intro .lead{ margin:0; color:var(--muted); font-size:0.98rem; }
+
+/* --- Grid de cards quadrados --- */
+.projects-grid{
+  display:grid;
+  gap:var(--gap);
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  align-items:stretch;
+  margin-top:1rem;
+}
+
+/* Card — link que ocupa todo o espaço; mantém aspecto quadrado */
+.project-card{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
+  border:1px solid rgba(255,255,255,0.03);
+  border-radius:var(--card-radius);
+  overflow:hidden;
+  color:inherit;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  aspect-ratio: 1 / 1;           /* Força formato quadrado em navegadores modernos */
+  min-height:180px;              /* fallback para browsers sem aspect-ratio */
+  box-shadow: 0 8px 28px rgba(0,0,0,0.55);
+}
+
+/* Thumbnail/color band no topo do card (coloque imagem dentro se quiser) */
+.project-media{
+  width:100%;
+  height:55%;
+  background: linear-gradient(135deg, rgba(0,200,83,0.12), rgba(0,0,0,0.06));
+  display:block;
+  object-fit:cover;
+  background-size:cover;
+  background-position:center;
+}
+
+/* Corpo do card com título e descrição */
+.project-body{
+  padding:.9rem;
+  display:flex;
+  flex-direction:column;
+  gap:.45rem;
+  justify-content:flex-start;
+}
+.project-body h3{ margin:0; font-size:1.05rem; color:var(--text); line-height:1.15; }
+.project-excerpt{ margin:0; color:var(--muted); font-size:0.92rem; line-height:1.35; }
+
+/* Pequena tag/label (opcional) dentro do card) */
+.project-label{ display:inline-block; margin-top:.35rem; padding:.18rem .45rem; background:var(--accent); color:var(--bg); border-radius:999px; font-weight:700; font-size:.72rem; text-transform:uppercase; letter-spacing:.6px; }
+
+/* Hover / foco — acessível e sutil */
+.project-card:hover,
+.project-card:focus{
+  transform: translateY(-8px);
+  border-color: rgba(0,200,83,0.12);
+  box-shadow: 0 18px 48px rgba(0,200,83,0.06);
+  outline:none;
+}
+.project-card:focus{ box-shadow: 0 0 0 6px var(--focus); }
+
+/* Barra de destaque no fim do body (micro-CTA visual) */
+.project-body::after{
+  content:"";
+  display:block;
+  height:4px;
+  margin-top:.6rem;
+  border-radius:4px;
+  background: linear-gradient(90deg, rgba(0,200,83,0.14), rgba(0,200,83,0.28));
+  opacity:.95;
+}
+
+/* --- Rodapé da página --- */
+.site-footer{ padding:1rem 0; border-top:1px solid rgba(255,255,255,0.03); color:var(--muted); margin-top:2rem; }
+.site-footer small{ display:block; text-align:center; }
+
+/* --- Responsividade refinada --- */
+@media (max-width: 940px){
+  .container{ padding:0 .85rem; }
+  .project-card{ min-height:150px; }
+}
+@media (max-width: 680px){
+  .header-inner{ flex-direction:column; align-items:flex-start; gap:.5rem; }
+  .main-nav .nav-list{ flex-direction:column; width:100%; }
+  .main-nav .nav-list a{ width:100%; padding:.6rem .7rem; }
+  .projects-grid{ grid-template-columns: repeat(2, 1fr); gap:.7rem; }
+}
+@media (max-width: 420px){
+  .projects-grid{ grid-template-columns: 1fr; }
+  .project-card{ min-height:140px; }
+}
+
+/* --- Acessibilidade: foco somente quando navegando por teclado --- */
+:focus{ outline:none; }
+:focus-visible{ box-shadow: 0 0 0 6px var(--focus); }
+
+/* --- Utilitários locais --- */
+.center{ text-align:center; }
+.lead{ color:var(--muted); font-size:1rem; }
+
+/* --- Notas rápidas:
+   - Para imagens reais, coloque <img class="project-media" src="..."> dentro do .project-card
+   - Se quiser que os cards fiquem exatamente alinhados independentemente do conteúdo,
+     mantenha o conteúdo curto ou use overflow:hidden nas descrições.
+*/

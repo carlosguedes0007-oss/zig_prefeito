@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Site oficial de campanha — Zig Candidato. Informações sobre projetos, contato e sobre a administração municipal." />
+  <title>Zig Candidato — Home</title>
+  <!-- Troque por um favicon real se tiver -->
+  <link rel="icon" href="favicon.ico" />
+  <!-- CSS principal (envie seu CSS quando quiser que eu integre) -->
+  <link rel="stylesheet" href="home.css" />
+</head>
+<body>
+  <!-- Link de pular conteúdo (melhora acessibilidade para leitores de tela / teclado) -->
+  <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <h1 class="site-title">Zig Candidato</h1>
+      <p class="site-subtitle">Prefeitura municipal para o meu cachorro (kakakaka)</p>
+
+      <nav class="main-nav" role="navigation" aria-label="Menu principal">
+        <ul class="nav-list">
+          <li><a href="index.html" aria-current="page">Início</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="site-main" role="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <h2 id="hero-title">Bem‑vindo ao site oficial</h2>
+        <p>Conheça os projetos e as propostas do Zig para a nossa cidade.</p>
+        <!-- botão chamando ação -->
+        <p><a class="btn-primary" href="projetos.html">Ver projetos</a></p>
+      </div>
+    </section>
+
+    <section class="about" id="sobre" aria-labelledby="sobre-title">
+      <div class="container">
+        <h3 id="sobre-title">Sobre</h3>
+        <p>Breve descrição sobre a campanha, missão e valores. Substitua este texto pelo conteúdo real.</p>
+      </div>
+    </section>
+
+    <section class="projects" id="projetos" aria-labelledby="projetos-title">
+      <div class="container">
+        <h3 id="projetos-title">Projetos</h3>
+        <p>Lista resumida dos projetos em destaque. Cada projeto pode ter sua própria página com detalhes.</p>
+      </div>
+    </section>
+
+    <section class="contact" id="contato" aria-labelledby="contato-title">
+      <div class="container">
+        <h3 id="contato-title">Contato</h3>
+        <p>Informações de contato e formulário (página de contato separada recomendada).</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <small>© <span id="year"></span> Zig Candidato — Prefeitura Municipal</small>
+    </div>
+  </footer>
+
+  <script>
+    // Inserir ano atual no rodapé
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
