@@ -4,22 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZIG PREFEITO - CONTATO</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>CONTATO</h1>
-    <!--AGORA FALTA FAZ O CABEÇALHO-->
-    <div>
-        <a href="index.html" target="_blank" rel="noopener noreferrer">HOME   -</a>
-    </div>
+    <!-- CABEÇALHO -->
+    <header>
+        <h1>ZIG PREFEITO</h1>
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="contato.html">CONTATO</a>
+            <a href="sobre.html">SOBRE</a>
+            <a href="projetos.html">PROJETOS</a>
+        </nav>
+    </header>
 
-    <div>
-        <a href="contato.html" target="_blank">-   CONTATO   -</a>
-    </div>
-    <div>
-        <a href="sobre.html" target="_blank" rel="noopener noreferrer">-   SOBRE    -</a>
-    </div>
-    <div>
-        <a href="projetos.html" target="_blank" rel="noopener noreferrer">-    PROJETOS </a>
-    </div>
+    <!-- SEÇÃO DE CONTATO -->
+    <main>
+        <section class="contato-secao">
+            <h2>ENTRE EM CONTATO</h2>
+            
+            <form class="formulario-contato">
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone">
+                </div>
+
+                <div class="form-group">
+                    <label for="descricao">Mensagem:</label>
+                    <textarea id="descricao" name="descricao" rows="6" required></textarea>
+                </div>
+
+                <button type="submit" class="btn-enviar">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <p>&copy; 2025 ZIG PREFEITO. Todos os direitos reservados.</p>
+        <p>&copy; Site com foco no humor</p>
+    </footer>
 </body>
 </html>
